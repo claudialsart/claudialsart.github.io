@@ -1,20 +1,25 @@
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("fonts/CormorantGaramond-Regular.ttf") format("truetype");
+}
+
 body {
   margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  background: linear-gradient(to bottom, #0e0e15 0%, #e7ded1 85%);
-  color: #f2f2f2;
+  font-family: "CormorantGaramond", serif;
+  background-color: #f5f1eb;
+  color: #1a1a1a;
+}
+
+.hero {
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   text-align: center;
-}
-
-header {
-  padding: 40px 20px 20px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: #e8e1d6;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+  color: #f0eadd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 nav ul {
@@ -22,50 +27,46 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin: 0;
+  gap: 3rem;
+  margin-top: 2rem;
 }
 
 nav a {
   text-decoration: none;
-  color: #e8e1d6;
-  font-size: 1.1rem;
-  transition: opacity 0.3s ease;
+  color: #f0eadd;
+  font-size: 1.2rem;
 }
 
-nav a:hover {
-  opacity: 0.7;
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 1rem 0 0.5rem;
+  letter-spacing: 0.1rem;
 }
 
-.hero {
-  margin: 30px 0;
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.hero img {
-  width: 80%;
-  max-width: 600px;
-  border-radius: 4px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-}
-
-.categories {
-  margin: 40px 0 80px;
+.buttons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  background-color: #f5f1eb;
 }
 
-.button {
-  padding: 10px 25px;
-  border: 1px solid #e8e1d6;
-  color: #e8e1d6;
+.btn {
+  padding: 1rem 2rem;
+  border: 1px solid #1a1a1a;
+  background-color: #f5f1eb;
+  color: #1a1a1a;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.button:hover {
-  background: #e8e1d6;
-  color: #0e0e15;
+.btn:hover {
+  background-color: #e6dfd6;
+  border-color: #000;
 }
