@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("fonts/CormorantGaramond-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "CormorantGaramond", serif;
+  background-color: #f5f1eb;
+  color: #1a1a1a;
+}
+
+.hero {
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #f0eadd;
+  padding: 2rem 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f0eadd;
+  font-size: 1.1rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+.buttons {
+  background-color: #f5f1eb;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: 1px solid #1a1a1a;
+  background-color: #f5f1eb;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e6dfd6;
+  border-color: #000;
+}
