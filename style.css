@@ -3,6 +3,11 @@
   src: url("fonts/CormorantGaramond-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "CormorantGaramond-Bold";
+  src: url("fonts/CormorantGaramond-Bold.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,70 +16,72 @@
 
 body {
   font-family: "CormorantGaramond", serif;
-  background-color: #1a1a1a;
-  color: #f0eadd;
+  background-color: #0c0c0c;
+  color: #eae4d8;
 }
 
-/* HERO SECTION */
 .hero {
   background-image: url("hero.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 2rem 1rem;
+  text-align: center;
 }
 
-.hero-text h1 {
+.header-text {
+  margin-top: 2rem;
+}
+
+.header-text h1 {
+  font-family: "CormorantGaramond-Bold", serif;
   font-size: 3rem;
-  letter-spacing: 0.1rem;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.15rem;
 }
 
-.hero-text p {
-  font-size: 1.2rem;
-}
-
-/* NAVIGATION MENU */
-.nav ul {
+nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem 0;
-  background-color: #1a1a1a;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
-.nav a {
+nav a {
   text-decoration: none;
-  color: #f0eadd;
+  color: #eae4d8;
   font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-/* SECTION BUTTONS */
+nav a:hover {
+  color: #d7cbb6;
+}
+
 .buttons {
-  background-color: #f5f1eb;
   display: flex;
   justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 2rem 1rem;
 }
 
 .btn {
   padding: 1rem 2rem;
-  border: 1px solid #1a1a1a;
-  background-color: #f5f1eb;
-  color: #1a1a1a;
+  border: 1px solid #eae4d8;
+  background-color: transparent;
+  color: #eae4d8;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #e6dfd6;
-  border-color: #000;
+  background-color: rgba(234, 228, 216, 0.1);
+  color: #fff;
 }
