@@ -1,6 +1,15 @@
 @font-face {
   font-family: "CormorantGaramond";
   src: url("fonts/CormorantGaramond-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("fonts/CormorantGaramond-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 * {
@@ -46,6 +55,7 @@ nav a {
   font-size: 3rem;
   letter-spacing: 0.1rem;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .hero-text p {
