@@ -23,15 +23,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   padding: 2rem 1rem;
-}
-
-/* TITLE & TAGLINE */
-.hero-text {
-  margin-top: 2rem;
 }
 
 .hero-text h1 {
@@ -48,9 +42,10 @@ body {
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
   justify-content: center;
-  padding: 1rem 0;
+  gap: 2rem;
+  padding: 2rem 0;
+  background-color: #1a1a1a;
 }
 
 .nav a {
@@ -61,23 +56,25 @@ body {
 
 /* SECTION BUTTONS */
 .buttons {
+  background-color: #f5f1eb;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  padding: 2rem 1rem;
 }
 
 .btn {
   padding: 1rem 2rem;
-  border: 1px solid #f0eadd;
-  background-color: transparent;
-  color: #f0eadd;
+  border: 1px solid #1a1a1a;
+  background-color: #f5f1eb;
+  color: #1a1a1a;
   text-decoration: none;
   font-size: 1.1rem;
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #e6dfd6;
+  border-color: #000;
 }
