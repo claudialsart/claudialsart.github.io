@@ -1,120 +1,107 @@
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: 'Cormorant';
   src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cormorant Garamond';
+  font-family: 'Cormorant-Bold';
   src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
 }
 
-body, html {
+body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Cormorant Garamond', serif;
-  background-color: #f8f5ef;
-}
-
-.hero {
+  font-family: 'Cormorant', serif;
   background-image: url('hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  color: #f5f0e6;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.header {
+.overlay {
   text-align: center;
-  padding-top: 5vh;
-  color: #f1e9dc;
+  margin-top: 2vh;
+  padding: 2vh;
 }
 
-.header h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+h1 {
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 3em;
+  margin-bottom: 0.2em;
 }
 
-.tagline {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #e6e1d6;
 }
 
 nav {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  font-size: 1rem;
-  padding-bottom: 1rem;
+  justify-content: center;
+  gap: 1.2em;
+  font-size: 1em;
+  margin-top: 1em;
 }
 
 nav a {
-  color: #f1e9dc;
   text-decoration: none;
+  color: #f5f0e6;
+  transition: opacity 0.3s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  opacity: 0.7;
 }
 
-.categories {
+.buttons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin: 2rem auto;
-  padding-bottom: 2rem;
+  gap: 2em;
+  padding: 2em;
+  background-color: rgba(245, 240, 230, 0.08);
 }
 
-.category-btn {
-  border: 1px solid #f1e9dc;
-  padding: 0.8rem 1.5rem;
+.button {
+  font-family: 'Cormorant', serif;
+  font-size: 1.2em;
+  padding: 0.8em 1.5em;
+  border: 1px solid #f5f0e6;
+  color: #f5f0e6;
+  background: transparent;
   text-decoration: none;
-  color: #f1e9dc;
-  font-size: 1.1rem;
-  transition: background 0.3s, color 0.3s;
-  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.category-btn:hover {
-  background-color: #f1e9dc;
-  color: #1a1a1a;
+.button:hover {
+  background-color: rgba(245, 240, 230, 0.15);
+  color: #ffffff;
 }
 
-/* Mobile adjustments */
+/* Responsive fixes */
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 2.4rem;
-  }
-
-  .tagline {
-    font-size: 1rem;
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
   }
 
   nav {
-    gap: 1rem;
-    font-size: 0.95rem;
-    flex-wrap: wrap;
-  }
-
-  .categories {
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.8em;
   }
 
-  .category-btn {
-    width: 80%;
-    text-align: center;
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .subtitle {
+    font-size: 1em;
   }
 }
