@@ -1,46 +1,170 @@
-#contact-form {
+@font-face {
+  font-family: 'Cormorant';
+  src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant-Bold';
+  src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cormorant', serif;
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: #f5f0e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.overlay {
+  text-align: center;
+  margin-top: 2vh;
+  padding: 2vh;
+}
+
+h1 {
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #e6e1d6;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f5f0e6;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
+  background-color: rgba(245, 240, 230, 0.08);
+  flex-wrap: wrap;
+}
+
+.button {
+  font-family: 'Cormorant', serif;
+  font-size: 1.2em;
+  padding: 0.8em 1.5em;
+  border: 1px solid #f5f0e6;
+  color: #f5f0e6;
+  background: transparent;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: rgba(245, 240, 230, 0.15);
+  color: #ffffff;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(15, 15, 15, 0.8);
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: rgba(15, 15, 15, 0.95);
   padding: 30px;
   border-radius: 12px;
-  z-index: 1000;
   width: 90%;
   max-width: 500px;
-  display: none;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
   color: #fff;
 }
 
-#contact-form label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 14px;
-}
-
-#contact-form input,
-#contact-form textarea {
+.modal-content input,
+.modal-content textarea {
   width: 100%;
+  margin-bottom: 1em;
   padding: 10px;
-  margin-bottom: 15px;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 14px;
+  font-family: 'Cormorant', serif;
+  font-size: 1em;
 }
 
-#contact-form button {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
+.modal-content button {
   padding: 10px 20px;
+  border: 1px solid #f5f0e6;
+  background: transparent;
+  color: #f5f0e6;
   cursor: pointer;
-  border-radius: 6px;
-  font-size: 16px;
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 1em;
 }
 
-#contact-form button:hover {
-  background-color: white;
-  color: black;
+.modal-content button:hover {
+  background-color: rgba(245, 240, 230, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+    padding: 0 1em;
+  }
 }
