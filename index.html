@@ -7,14 +7,16 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <nav>
-      <ul class="menu">
+    <nav class="navbar">
+      <div class="logo">Claudia LS Art</div>
+      <ul class="nav-links">
         <li><a href="#">Originals</a></li>
         <li><a href="#">Prints</a></li>
         <li><a href="#">Portfolio</a></li>
         <li><a href="#">About Me</a></li>
-        <li><a href="#" id="contactButton">Contact Me</a></li>
+        <li><a href="#" onclick="openContactForm()">Contact Me</a></li>
       </ul>
     </nav>
   </header>
@@ -24,45 +26,44 @@
       <h1>Welcome to Claudia LS Art</h1>
       <p>Abstract Realism • Space Art • Painting Studies</p>
     </section>
-
-    <!-- Hidden Contact Form -->
-    <section id="contactFormSection" class="contact-form hidden">
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mldleggd" method="POST">
-        <label>
-          Your Name:
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          Your Email:
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Subject:
-          <input type="text" name="subject" required />
-        </label>
-        <label>
-          Message:
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <button type="submit">Send</button>
-      </form>
-    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Claudia LS Art. All rights reserved.</p>
+    <p>© 2025 Claudia LS Art. All rights reserved.</p>
   </footer>
 
-  <script>
-    const contactButton = document.getElementById("contactButton");
-    const contactForm = document.getElementById("contactFormSection");
+  <!-- CONTACT FORM -->
+  <div id="contact-form-overlay" class="overlay">
+    <div class="contact-form-container">
+      <span class="close-btn" onclick="closeContactForm()">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mldleggd" method="POST" class="contact-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
 
-    contactButton.addEventListener("click", function (e) {
-      e.preventDefault();
-      contactForm.classList.toggle("hidden");
-      contactForm.scrollIntoView({ behavior: "smooth" });
-    });
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM SCRIPT -->
+  <script>
+    function openContactForm() {
+      document.getElementById("contact-form-overlay").style.display = "flex";
+    }
+
+    function closeContactForm() {
+      document.getElementById("contact-form-overlay").style.display = "none";
+    }
   </script>
 </body>
 </html>
