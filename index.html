@@ -2,67 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claudia LS Art</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
-    <nav class="navbar">
-      <div class="logo">Claudia LS Art</div>
-      <ul class="nav-links">
-        <li><a href="#">Originals</a></li>
-        <li><a href="#">Prints</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#" onclick="openContactForm()">Contact Me</a></li>
-      </ul>
+  <div class="overlay">
+    <h1>CLAUDIA LS ART</h1>
+    <p class="subtitle">Emotive realism meets abstract space</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#prints">Prints</a>
+      <a href="#commissions">Commissions</a>
+      <a href="#sold">Sold</a>
+      <a href="#contact">Contact Me</a>
     </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <h1>Welcome to Claudia LS Art</h1>
-      <p>Abstract Realism • Space Art • Painting Studies</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Claudia LS Art. All rights reserved.</p>
-  </footer>
-
-  <!-- CONTACT FORM POPUP -->
-  <div id="contact-form-overlay" class="overlay">
-    <div class="form-box">
-      <span class="close-btn" onclick="closeContactForm()">&times;</span>
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mldleggd" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" name="name" id="name" required>
-
-        <label for="email">Your Email:</label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="subject">Subject:</label>
-        <input type="text" name="subject" id="subject" required>
-
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
-
-        <button type="submit">Send</button>
-      </form>
-    </div>
   </div>
 
-  <script>
-    function openContactForm() {
-      document.getElementById('contact-form-overlay').style.display = 'flex';
-    }
+  <div class="buttons">
+    <a href="#space" class="button">Space Art</a>
+    <a href="#abstract" class="button">Abstract Realism</a>
+    <a href="#studies" class="button">Painting Studies</a>
+  </div>
 
-    function closeContactForm() {
-      document.getElementById('contact-form-overlay').style.display = 'none';
-    }
-  </script>
+  <!-- Contact Form -->
+  <div class="contact-form" id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mldleggd" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="button">Send</button>
+    </form>
+  </div>
 </body>
 </html>
