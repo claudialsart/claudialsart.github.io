@@ -32,37 +32,36 @@
     <p>© 2025 Claudia LS Art. All rights reserved.</p>
   </footer>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT FORM POPUP -->
   <div id="contact-form-overlay" class="overlay">
-    <div class="contact-form-container">
+    <div class="form-box">
       <span class="close-btn" onclick="closeContactForm()">&times;</span>
       <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mldleggd" method="POST" class="contact-form">
+      <form action="https://formspree.io/f/mldleggd" method="POST">
         <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" name="name" id="name" required>
 
         <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" name="email" id="email" required>
 
         <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required />
+        <input type="text" name="subject" id="subject" required>
 
         <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <textarea name="message" id="message" rows="5" required></textarea>
 
         <button type="submit">Send</button>
       </form>
     </div>
   </div>
 
-  <!-- CONTACT FORM SCRIPT -->
   <script>
     function openContactForm() {
-      document.getElementById("contact-form-overlay").style.display = "flex";
+      document.getElementById('contact-form-overlay').style.display = 'flex';
     }
 
     function closeContactForm() {
-      document.getElementById("contact-form-overlay").style.display = "none";
+      document.getElementById('contact-form-overlay').style.display = 'none';
     }
   </script>
 </body>
