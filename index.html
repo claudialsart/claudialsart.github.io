@@ -2,28 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Claudia LS Art</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="overlay">
-    <h1>CLAUDIA LS ART</h1>
-    <p class="subtitle">Emotive realism meets abstract space</p>
+  <header>
     <nav>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#prints">Prints</a>
-      <a href="#commissions">Commissions</a>
-      <a href="#sold">Sold</a>
-      <a href="mailto:yourname@yourdomain.com">Contact Me</a>
+      <ul class="menu">
+        <li><a href="#">Originals</a></li>
+        <li><a href="#">Prints</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#" id="contactButton">Contact Me</a></li>
+      </ul>
     </nav>
-  </div>
+  </header>
 
-  <div class="buttons">
-    <a href="#space" class="button">Space Art</a>
-    <a href="#abstract" class="button">Abstract Realism</a>
-    <a href="#studies" class="button">Painting Studies</a>
-  </div>
+  <main>
+    <section class="hero">
+      <h1>Welcome to Claudia LS Art</h1>
+      <p>Abstract Realism • Space Art • Painting Studies</p>
+    </section>
+
+    <!-- Hidden Contact Form -->
+    <section id="contactFormSection" class="contact-form hidden">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mldleggd" method="POST">
+        <label>
+          Your Name:
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Your Email:
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Subject:
+          <input type="text" name="subject" required />
+        </label>
+        <label>
+          Message:
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Claudia LS Art. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const contactButton = document.getElementById("contactButton");
+    const contactForm = document.getElementById("contactFormSection");
+
+    contactButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      contactForm.classList.toggle("hidden");
+      contactForm.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
