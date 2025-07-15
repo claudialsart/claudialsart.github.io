@@ -16,7 +16,7 @@
       <a href="#prints">Prints</a>
       <a href="#commissions">Commissions</a>
       <a href="#sold">Sold</a>
-      <a href="#" id="contactToggle">Contact Me</a>
+      <a href="#" id="open-form">Contact Me</a>
     </nav>
   </div>
 
@@ -26,31 +26,44 @@
     <a href="#studies" class="button">Painting Studies</a>
   </div>
 
-  <div class="contact-container" id="contactContainer">
-    <form action="https://formspree.io/f/mldleggd" method="POST" class="contact-form">
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-form">&times;</span>
       <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mldleggd" method="POST">
+        <label>Your Name:</label>
+        <input type="text" name="name" required />
 
-      <label for="name">Your Name:</label>
-      <input type="text" name="name" required />
+        <label>Your Email:</label>
+        <input type="email" name="email" required />
 
-      <label for="email">Your Email:</label>
-      <input type="email" name="email" required />
+        <label>Your Message:</label>
+        <textarea name="message" required></textarea>
 
-      <label for="message">Your Message:</label>
-      <textarea name="message" rows="5" required></textarea>
-
-      <button type="submit">Send</button>
-    </form>
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </div>
 
   <script>
-    const contactSection = document.getElementById("contactContainer");
-    contactSection.style.display = "none"; // make sure it's hidden on load
+    const openBtn = document.getElementById("open-form");
+    const closeBtn = document.getElementById("close-form");
+    const modal = document.getElementById("contact-modal");
 
-    document.getElementById("contactToggle").addEventListener("click", function (e) {
+    openBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      contactSection.style.display =
-        contactSection.style.display === "none" ? "block" : "none";
+      modal.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
     });
   </script>
 </body>
