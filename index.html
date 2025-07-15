@@ -16,7 +16,7 @@
       <a href="#prints">Prints</a>
       <a href="#commissions">Commissions</a>
       <a href="#sold">Sold</a>
-      <a href="#contact">Contact Me</a>
+      <a href="#" id="contactToggle">Contact Me</a>
     </nav>
   </div>
 
@@ -26,21 +26,30 @@
     <a href="#studies" class="button">Painting Studies</a>
   </div>
 
-  <!-- Contact Form -->
-  <div class="contact-form" id="contact">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/mldleggd" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
+  <!-- Contact form (hidden by default) -->
+  <div class="contact-container" id="contactContainer" style="display: none;">
+    <form action="https://formspree.io/f/mldleggd" method="POST" class="contact-form">
+      <h2>Contact Me</h2>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required />
+      <label for="name">Your Name:</label>
+      <input type="text" name="name" required />
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="email">Your Email:</label>
+      <input type="email" name="email" required />
 
-      <button type="submit" class="button">Send</button>
+      <label for="message">Your Message:</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById("contactToggle").addEventListener("click", function (e) {
+      e.preventDefault();
+      const form = document.getElementById("contactContainer");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    });
+  </script>
 </body>
 </html>
