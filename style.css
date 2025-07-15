@@ -168,3 +168,39 @@ nav a:hover {
     padding: 0 1em;
   }
 }
+@media screen and (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 5px 8px;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .button {
+    width: 80%;
+    max-width: 250px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    padding: 0 10px;
+    text-align: center;
+  }
+}
