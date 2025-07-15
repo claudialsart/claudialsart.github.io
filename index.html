@@ -26,8 +26,7 @@
     <a href="#studies" class="button">Painting Studies</a>
   </div>
 
-  <!-- Contact form (hidden by default) -->
-  <div class="contact-container" id="contactContainer" style="display: none;">
+  <div class="contact-container" id="contactContainer">
     <form action="https://formspree.io/f/mldleggd" method="POST" class="contact-form">
       <h2>Contact Me</h2>
 
@@ -45,10 +44,13 @@
   </div>
 
   <script>
+    const contactSection = document.getElementById("contactContainer");
+    contactSection.style.display = "none"; // make sure it's hidden on load
+
     document.getElementById("contactToggle").addEventListener("click", function (e) {
       e.preventDefault();
-      const form = document.getElementById("contactContainer");
-      form.style.display = form.style.display === "none" ? "block" : "none";
+      contactSection.style.display =
+        contactSection.style.display === "none" ? "block" : "none";
     });
   </script>
 </body>
