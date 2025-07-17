@@ -26,9 +26,27 @@ body {
   align-items: center;
 }
 .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 5vh 20px;
+  box-sizing: border-box;
+}
+
+.top-section {
   text-align: center;
-  padding: 0;
-  margin: 0;
+}
+
+.middle-section {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  align-items: center;
 }
 
 h1 {
