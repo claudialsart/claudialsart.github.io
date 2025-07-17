@@ -7,61 +7,45 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="overlay">
+  <div class="hero">
     <h1>CLAUDIA LS ART</h1>
-    <p class="subtitle">Emotive realism meets abstract space</p>
-
-    <nav>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#prints">Prints</a>
-      <a href="#commissions">Commissions</a>
-      <a href="#sold">Sold</a>
-      <a href="#" id="open-form">Contact Me</a>
-    </nav>
-
-    <div class="buttons">
-      <a href="#space" class="button">Space Art</a>
-      <a href="#abstract" class="button">Abstract Realism</a>
-      <a href="#studies" class="button">Painting Studies</a>
-    </div>
+    <p>Emotive realism meets abstract space</p>
   </div>
 
-  <div id="contact-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-button" id="close-form">&times;</span>
+  <nav>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="#">Prints (Coming Soon)</a></li>
+      <li><a href="commissions.html">Commissions</a></li>
+      <li><a href="sold.html">Sold</a></li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <div class="categories">
+    <a href="space-art.html">Space Art</a>
+    <a href="abstract-realism.html">Abstract Realism</a>
+    <a href="painting-studies.html">Painting Studies</a>
+  </div>
+
+  <div id="contact" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
       <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mldleggd" method="POST">
-        <label>Your Name:</label>
-        <input type="text" name="name" required />
-        <label>Your Email:</label>
-        <input type="email" name="email" required />
-        <label>Your Message:</label>
-        <textarea name="message" required></textarea>
+      <form action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required />
+        <br />
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br />
         <button type="submit">Send</button>
       </form>
     </div>
   </div>
-
-  <script>
-    const openBtn = document.getElementById("open-form");
-    const closeBtn = document.getElementById("close-form");
-    const modal = document.getElementById("contact-modal");
-
-    openBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      modal.style.display = "flex";
-    });
-
-    closeBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-    });
-
-    window.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  </script>
 </body>
 </html>
