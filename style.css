@@ -1,184 +1,131 @@
-@font-face {
-  font-family: 'Cormorant';
-  src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Cormorant-Bold';
-  src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
-}
-
+/* General Styles */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Cormorant', serif;
-  background-image: url("hero-moon.jpg");
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  background: url('hero-image.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  color: #f5f0e6;
-}
-
-.overlay {
-  height: 100vh;
-  width: 100%;
   text-align: center;
-  padding-top: 2vh;
-  position: relative;
-  background: transparent;
+  padding: 100px 20px;
 }
 
-h1 {
-  font-family: 'Cormorant-Bold', serif;
-  font-size: 3em;
-  margin-bottom: 0.2em;
-}
-
-.subtitle {
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
-  color: #e6e1d6;
-}
-
-nav {
+/* Navigation Menu */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2em;
-  font-size: 1em;
-  margin-top: 1em;
 }
-
+nav li {
+  margin: 0 15px;
+}
 nav a {
+  color: #fff;
   text-decoration: none;
-  color: #f5f0e6;
-  transition: opacity 0.3s ease;
+  font-size: 18px;
 }
 
-nav a:hover {
-  opacity: 0.7;
-}
-
-.buttons {
-  position: absolute;
-  bottom: 4vh;
-  left: 50%;
-  transform: translateX(-50%);
+/* Categories Section */
+.categories {
   display: flex;
-  justify-content: center;
-  gap: 2em;
-  flex-wrap: nowrap;
-  background: none;
+  justify-content: space-around;
+  margin: 40px 20px;
 }
-
-.button {
-  font-family: 'Cormorant', serif;
-  font-size: 1.2em;
-  padding: 0.8em 1.5em;
-  border: 1px solid #f5f0e6;
-  color: #f5f0e6;
-  background: transparent;
+.categories a {
+  display: block;
+  padding: 20px;
+  border: 2px solid #fff;
+  text-align: center;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
+  color: #fff;
+  font-size: 18px;
+  flex: 1;
+  margin: 0 10px;
 }
 
-.button:hover {
-  background-color: rgba(245, 240, 230, 0.15);
-  color: #ffffff;
-}
-
-/* Modal styles */
-.modal {
+/* Contact Overlay */
+.overlay {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.8);
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
 }
-
-.modal-content {
-  background-color: rgba(15, 15, 15, 0.95);
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  color: #fff;
+.overlay-content {
+  background: #000;
+  border: 2px solid #fff;
+  padding: 20px;
+  width: 600px;
+  max-width: 90%;
+  margin: 100px auto;
   position: relative;
 }
-
-.close-button {
+.overlay-content .close {
   position: absolute;
   top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
+  right: 20px;
   color: #fff;
+  text-decoration: none;
+  font-size: 36px;
+  line-height: 30px;
 }
-
-.modal-content input,
-.modal-content textarea {
+.overlay-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+.overlay-content form {
+  display: flex;
+  flex-direction: column;
+}
+.overlay-content label {
+  margin: 10px 0 5px;
+}
+.overlay-content input,
+.overlay-content textarea {
+  padding: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
   width: 100%;
-  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+.overlay-content button {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: 'Cormorant', serif;
-  font-size: 1em;
-}
-
-.modal-content button {
-  padding: 10px 20px;
-  border: 1px solid #f5f0e6;
-  background: transparent;
-  color: #f5f0e6;
+  font-size: 16px;
+  background: #fff;
+  color: #000;
+  border: none;
   cursor: pointer;
-  font-family: 'Cormorant-Bold', serif;
-  font-size: 1em;
 }
 
-.modal-content button:hover {
-  background-color: rgba(245, 240, 230, 0.2);
+/* Display overlay when target */
+#contact:target {
+  display: block;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .buttons {
-    flex-wrap: wrap;
+/* Responsive Styles */
+@media (max-width: 767px) {
+  /* Stack categories vertically on phones */
+  .categories {
     flex-direction: column;
-    gap: 1em;
+    align-items: center;
   }
-
-  .button {
+  .categories a {
     width: 80%;
-    max-width: 250px;
-    font-size: 16px;
+    margin: 10px 0;
   }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  .subtitle {
-    font-size: 14px;
-    padding: 0 10px;
-    text-align: center;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 0.8em;
-  }
-
-  nav a {
-    font-size: 14px;
+  /* Ensure overlay content fits on small screens */
+  .overlay-content {
+    width: 90%;
+    margin: 50px auto;
   }
 }
