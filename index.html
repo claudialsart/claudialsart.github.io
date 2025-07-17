@@ -1,35 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Claudia LS Art</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>CLAUDIA LS ART</h1>
-      <p class="subtitle">Emotive realism meets abstract space</p>
-      <nav class="top-links">
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Prints</a>
-        <a href="#">Commissions</a>
-        <a href="#">Sold</a>
-        <a href="mailto:claudia@example.com">Contact Me</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claudia LS Art</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <h1>CLAUDIA LS ART</h1>
+    <p class="subtitle">Emotive realism meets abstract space</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#prints">Prints</a>
+      <a href="#commissions">Commissions</a>
+      <a href="#sold">Sold</a>
+      <a href="#" id="open-form">Contact Me</a>
+    </nav>
+  </div>
 
-    <main>
-      <img src="hero-moon.jpg" alt="Moon artwork" class="moon-image" />
-    </main>
+  <div class="buttons">
+    <a href="#space" class="button">Space Art</a>
+    <a href="#abstract" class="button">Abstract Realism</a>
+    <a href="#studies" class="button">Painting Studies</a>
+  </div>
 
-    <footer>
-      <div class="button-container">
-        <a href="#" class="big-button">Space Art</a>
-        <a href="#" class="big-button">Abstract Realism</a>
-        <a href="#" class="big-button">Painting Studies</a>
-      </div>
-    </footer>
-  </body>
+  <!-- Popup Modal Contact Form -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-form">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mldleggd" method="POST">
+        <label>Your Name:</label>
+        <input type="text" name="name" required />
+
+        <label>Your Email:</label>
+        <input type="email" name="email" required />
+
+        <label>Your Message:</label>
+        <textarea name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("open-form");
+    const closeBtn = document.getElementById("close-form");
+    const modal = document.getElementById("contact-modal");
+
+    openBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
 </html>
