@@ -1,131 +1,184 @@
-/* General Styles */
+@font-face {
+  font-family: 'Cormorant';
+  src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cormorant-Bold';
+  src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
-}
-
-/* Hero Section */
-.hero {
-  background: url('hero-image.jpg') no-repeat center center;
-  background-size: cover;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-/* Navigation Menu */
-nav ul {
-  list-style: none;
-  margin: 0;
   padding: 0;
+  font-family: 'Cormorant', serif;
+  background-image: url("hero-moon.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: #f5f0e6;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding-top: 2vh;
+  position: relative;
+  background: transparent;
+}
+
+h1 {
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #e6e1d6;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f5f0e6;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 4vh;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-}
-nav li {
-  margin: 0 15px;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
+  gap: 2em;
+  flex-wrap: nowrap;
+  background: none;
 }
 
-/* Categories Section */
-.categories {
-  display: flex;
-  justify-content: space-around;
-  margin: 40px 20px;
-}
-.categories a {
-  display: block;
-  padding: 20px;
-  border: 2px solid #fff;
-  text-align: center;
+.button {
+  font-family: 'Cormorant', serif;
+  font-size: 1.2em;
+  padding: 0.8em 1.5em;
+  border: 1px solid #f5f0e6;
+  color: #f5f0e6;
+  background: transparent;
   text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  flex: 1;
-  margin: 0 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Contact Overlay */
-.overlay {
+.button:hover {
+  background-color: rgba(245, 240, 230, 0.15);
+  color: #ffffff;
+}
+
+/* Modal styles */
+.modal {
   display: none;
   position: fixed;
-  top: 0;
+  z-index: 1000;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
   overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 }
-.overlay-content {
-  background: #000;
-  border: 2px solid #fff;
-  padding: 20px;
-  width: 600px;
-  max-width: 90%;
-  margin: 100px auto;
+
+.modal-content {
+  background-color: rgba(15, 15, 15, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: #fff;
   position: relative;
 }
-.overlay-content .close {
+
+.close-button {
   position: absolute;
   top: 10px;
-  right: 20px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 36px;
-  line-height: 30px;
-}
-.overlay-content h2 {
-  margin-top: 0;
-  text-align: center;
-}
-.overlay-content form {
-  display: flex;
-  flex-direction: column;
-}
-.overlay-content label {
-  margin: 10px 0 5px;
-}
-.overlay-content input,
-.overlay-content textarea {
-  padding: 8px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.overlay-content button {
-  padding: 10px;
-  font-size: 16px;
-  background: #fff;
-  color: #000;
-  border: none;
+  right: 15px;
+  font-size: 24px;
   cursor: pointer;
+  color: #fff;
 }
 
-/* Display overlay when target */
-#contact:target {
-  display: block;
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Cormorant', serif;
+  font-size: 1em;
 }
 
-/* Responsive Styles */
-@media (max-width: 767px) {
-  /* Stack categories vertically on phones */
-  .categories {
+.modal-content button {
+  padding: 10px 20px;
+  border: 1px solid #f5f0e6;
+  background: transparent;
+  color: #f5f0e6;
+  cursor: pointer;
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 1em;
+}
+
+.modal-content button:hover {
+  background-color: rgba(245, 240, 230, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .buttons {
+    flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
+    gap: 1em;
   }
-  .categories a {
+
+  .button {
     width: 80%;
-    margin: 10px 0;
+    max-width: 250px;
+    font-size: 16px;
   }
-  /* Ensure overlay content fits on small screens */
-  .overlay-content {
-    width: 90%;
-    margin: 50px auto;
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+
+  nav a {
+    font-size: 14px;
   }
 }
