@@ -2,6 +2,7 @@
   font-family: 'Cormorant';
   src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Cormorant-Bold';
   src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
@@ -11,23 +12,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Cormorant', serif;
-  background-image: url("hero-moon.jpg");
+  background-image: url("hero-moon-long.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  min-height: 100vh;
   color: #f5f0e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
 }
 
 .overlay {
-  height: 100vh;
-  width: 100%;
   text-align: center;
-  padding-top: 2vh;
-  position: relative;
-  background: transparent;
+  margin-top: 2vh;
+  padding: 2vh;
 }
 
 h1 {
@@ -62,15 +62,12 @@ nav a:hover {
 }
 
 .buttons {
-  position: absolute;
-  bottom: 4vh;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   gap: 2em;
-  flex-wrap: nowrap;
-  background: none;
+  padding: 2em;
+  background-color: rgba(245, 240, 230, 0.08);
+  flex-wrap: wrap;
 }
 
 .button {
@@ -150,11 +147,45 @@ nav a:hover {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .buttons {
-    flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
     gap: 1em;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+    padding: 0 1em;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 5px 8px;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   .button {
@@ -171,14 +202,5 @@ nav a:hover {
     font-size: 14px;
     padding: 0 10px;
     text-align: center;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 0.8em;
-  }
-
-  nav a {
-    font-size: 14px;
   }
 }
