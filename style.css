@@ -18,17 +18,14 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   color: #f5f0e6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   overflow-x: hidden;
 }
 
 .overlay {
+  position: relative;
   text-align: center;
-  margin-top: 2vh;
-  padding: 2vh;
-  background: none;
+  padding-top: 2vh;
+  height: 100vh;
 }
 
 h1 {
@@ -63,14 +60,15 @@ nav a:hover {
 }
 
 .buttons {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   gap: 2em;
-  padding: 2em 0;
   flex-wrap: wrap;
   background: none;
-  box-shadow: none;
-  margin-top: 1em;
 }
 
 .button {
