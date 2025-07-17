@@ -25,9 +25,15 @@ body {
 }
 
 .overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   text-align: center;
-  margin-top: 2vh;
-  padding: 2vh;
+  padding: 0 20px;
+  width: 100%;
+  z-index: 1;
 }
 
 h1 {
