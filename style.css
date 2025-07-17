@@ -176,6 +176,14 @@ nav a:hover {
   text-align: center;
 }
 
+.direct-email {
+  margin-top: 2em;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #f5f0e6;
+  text-align: center;
+}
+
 .direct-email a {
   color: #f5f0e6;
   text-decoration: underline;
