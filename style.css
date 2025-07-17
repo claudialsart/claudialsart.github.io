@@ -1,225 +1,122 @@
-@font-face {
-  font-family: 'Cormorant';
-  src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Cormorant-Bold';
-  src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Cormorant', serif;
-  background-image: url("hero-moon.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  overflow: hidden;
-  color: #f5f0e6;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.overlay {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  padding: 5vh 20px;
-  box-sizing: border-box;
 }
 
-.top-section {
+header {
   text-align: center;
-}
-
-.middle-section {
-  text-align: center;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-  align-items: center;
+  padding: 1.2rem 1rem 0.5rem;
 }
 
 h1 {
-  font-family: 'Cormorant-Bold', serif;
-  font-size: 3em;
-  margin-bottom: 0.2em;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
 }
 
 .subtitle {
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
-  color: #e6e1d6;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  color: #ccc;
 }
 
-nav {
+.top-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2em;
-  font-size: 1em;
-  margin-top: 1em;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
 }
 
-nav a {
+.top-links a {
+  color: white;
   text-decoration: none;
-  color: #f5f0e6;
-  transition: opacity 0.3s ease;
+  padding: 0.2rem 0.6rem;
+  transition: color 0.2s ease;
 }
 
-nav a:hover {
-  opacity: 0.7;
+.top-links a:hover {
+  color: #aaa;
 }
 
-.buttons {
+main {
+  flex: 1;
   display: flex;
-  justify-content: center;
-  gap: 1em;
-  padding: 0; /* Remove the 2em */
-  background-color: rgba(245, 240, 230, 0.08);
-  flex-wrap: wrap;
-}
-
-.button {
-  font-family: 'Cormorant', serif;
-  font-size: 1.2em;
-  padding: 0.8em 1.5em;
-  border: 1px solid #f5f0e6;
-  color: #f5f0e6;
-  background: transparent;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.button:hover {
-  background-color: rgba(245, 240, 230, 0.15);
-  color: #ffffff;
-}
-
-/* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.modal-content {
-  background-color: rgba(15, 15, 15, 0.95);
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  color: #fff;
-  position: relative;
+.moon-image {
+  max-width: 90%;
+  max-height: 80%;
+  height: auto;
+  object-fit: contain;
 }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #fff;
+footer {
+  padding: 1rem;
 }
 
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  margin-bottom: 1em;
-  padding: 10px;
-  border: 1px solid #ccc;
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.big-button {
+  background-color: white;
+  color: black;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  font-weight: bold;
   border-radius: 6px;
-  font-family: 'Cormorant', serif;
-  font-size: 1em;
+  transition: background-color 0.3s;
+  flex: 1 1 220px;
+  text-align: center;
 }
 
-.modal-content button {
-  padding: 10px 20px;
-  border: 1px solid #f5f0e6;
-  background: transparent;
-  color: #f5f0e6;
-  cursor: pointer;
-  font-family: 'Cormorant-Bold', serif;
-  font-size: 1em;
+.big-button:hover {
+  background-color: #ddd;
 }
 
-.modal-content button:hover {
-  background-color: rgba(245, 240, 230, 0.2);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 0.8em;
-  }
-
+/* Responsive tweaks */
+@media (max-width: 600px) {
   h1 {
-    font-size: 2.2em;
+    font-size: 1.6rem;
   }
 
   .subtitle {
-    font-size: 1em;
-    padding: 0 1em;
-  }
-}
-@media screen and (max-width: 600px) {
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
+    font-size: 0.9rem;
   }
 
-  nav a {
-    font-size: 14px;
-    margin: 5px 8px;
-    display: inline-block;
-    text-align: center;
-    white-space: nowrap;
+  .top-links {
+    font-size: 0.85rem;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
   }
 
-  .buttons {
+  .button-container {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
   }
 
-  .button {
-    width: 80%;
-    max-width: 250px;
-    font-size: 16px;
+  .big-button {
+    width: 100%;
+    max-width: 300px;
   }
 
-  h1 {
-    font-size: 26px;
-  }
-
-  .subtitle {
-    font-size: 14px;
-    padding: 0 10px;
-    text-align: center;
+  .moon-image {
+    max-height: 60vh;
   }
 }
