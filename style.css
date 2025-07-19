@@ -1,4 +1,4 @@
-l@font-face {
+nl@font-face {
   font-family: 'Cormorant';
   src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
 }
@@ -229,4 +229,47 @@ nav a:hover {
 #what-i-paint h2,
 #what-i-paint p {
   color: white;
+}
+/* My Journey Section */
+#my-journey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f0f11;
+  padding: 4rem 2rem;
+}
+
+.my-journey-overlay {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.my-journey-text {
+  flex: 1;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding-top: 1rem;
+}
+
+.my-journey-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Cormorant-Bold', serif;
+  color: #ffffff;
+}
+
+.my-journey-image {
+  flex: 1;
+  background-image: url('images/my-journey.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
 }
