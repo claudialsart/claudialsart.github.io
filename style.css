@@ -266,7 +266,7 @@ nav a:hover {
 
 .my-journey-image {
   flex: 1;
-  background-image: url('images/my-journey.jpg');
+  background-image: url('my-journey.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
