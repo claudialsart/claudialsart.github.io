@@ -1,4 +1,4 @@
-@font-face {
+l@font-face {
   font-family: 'Cormorant';
   src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
 }
@@ -207,4 +207,26 @@ nav a:hover {
   .modal-content button {
     font-size: 1em;
   }
+}
+#what-i-paint {
+  background-image: url("what-i-paint.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+#what-i-paint .overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent dark box */
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+#what-i-paint h2,
+#what-i-paint p {
+  color: white;
 }
