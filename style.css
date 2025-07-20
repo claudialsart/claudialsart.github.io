@@ -301,12 +301,32 @@ nav a:hover {
   }
 
   .my-journey-image {
-    aspect-ratio: auto;
-    height: auto;
-    min-height: 280px;
-    max-height: 400px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 1.5rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-journey-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .my-journey-overlay {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .my-journey-text {
+    text-align: center;
+    font-size: 1.05rem;
+  }
+
+  .my-journey-image img {
+    max-width: 90%;
+    margin-top: 1rem;
   }
 }
