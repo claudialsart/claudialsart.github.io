@@ -330,3 +330,54 @@ nav a:hover {
     margin-top: 1rem;
   }
 }
+#my-journey {
+  position: relative;
+  background-image: url("my-journey.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6vh 5vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.my-journey-background {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.my-journey-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  max-width: 450px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.my-journey-box h2 {
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  #my-journey {
+    padding: 4vh 4vw;
+    background-position: top;
+  }
+
+  .my-journey-box {
+    max-width: 100%;
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .my-journey-box h2 {
+    font-size: 2rem;
+  }
+}
