@@ -273,3 +273,40 @@ nav a:hover {
   aspect-ratio: 1 / 1;
   border-radius: 12px;
 }
+
+/* Mobile fix for My Journey */
+@media (max-width: 768px) {
+  #my-journey {
+    padding: 2rem 1rem;
+  }
+
+  .my-journey-overlay {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-journey-text,
+  .my-journey-image {
+    max-width: 90vw;
+    width: 100%;
+    text-align: center;
+  }
+
+  .my-journey-text h2 {
+    font-size: 2rem;
+  }
+
+  .my-journey-text {
+    font-size: 1rem;
+  }
+
+  .my-journey-image {
+    aspect-ratio: auto;
+    height: auto;
+    min-height: 280px;
+    max-height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 1.5rem;
+  }
+}
