@@ -1,20 +1,84 @@
-<section id="my-journey">
-  <div class="my-journey-background">
-    <div class="my-journey-box">
-      <h2>My Journey</h2>
-      <p>
-        I’m a self-taught artist. I didn’t follow a traditional path. I carved one.
-        My art is born from solitude, deep reflection, and a personal transformation sparked by motherhood.
-        I lost almost everything: my home, my studio, and my sense of direction. So I began again.
-        Painting became a way to hold onto something real. Something I could control, shape, and pour myself into.
-        It still is.
-      </p>
-    </div>
-  </div>
-</section>
+@font-face {
+  font-family: 'Cormorant';
+  src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+}
 
-/* Add this CSS to your style.css file */
+@font-face {
+  font-family: 'Cormorant-Bold';
+  src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cormorant', serif;
+  background-image: url("hero-moon-long.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100svh;
+  color: #f5f0e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2em;
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f5f0e6;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+h1 {
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #e6e1d6;
+}
+
+#what-i-paint {
+  background-image: url("what-i-paint.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+#what-i-paint .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+#what-i-paint h2,
+#what-i-paint p {
+  color: white;
+}
+
+/* My Journey Section */
 #my-journey {
   position: relative;
   background-image: url("my-journey.jpg");
