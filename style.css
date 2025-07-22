@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: Georgia, serif;
   color: white;
-  background: url('your-moon-image.jpg') no-repeat center center fixed;
+  background: url('hero-moon.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
