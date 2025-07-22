@@ -1,10 +1,14 @@
 body {
+  background-image: url('hero-moon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
-  font-family: Georgia, serif;
-  color: white;
-  background: url('hero-moon.jpg') no-repeat center center fixed;
-  background-size: cover;
+  font-family: 'YourFontName', serif;
+  color: #fff;
+  text-align: center;
 }
 
 .overlay {
