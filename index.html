@@ -8,18 +8,16 @@
 </head>
 <body>
   <div class="overlay">
-    <div>
-      <h1>CLAUDIA LS ART</h1>
-      <p class="subtitle">Emotive realism meets abstract space</p>
+    <h1>CLAUDIA LS ART</h1>
+    <p class="subtitle">Emotive realism meets abstract space</p>
 
-      <div class="vertical-nav">
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="#">Prints</a>
-        <a href="commissions.html">Commissions</a>
-        <a href="#">Sold</a>
-        <a href="#" onclick="openModal()">Contact Me</a>
-      </div>
+    <div class="vertical-nav">
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="#">Prints</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="#">Sold</a>
+      <a href="#" onclick="openModal()">Contact Me</a>
     </div>
 
     <div class="buttons">
@@ -42,10 +40,7 @@
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="_replyto" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
-        <!-- Redirect to your thank-you page -->
         <input type="hidden" name="_redirect" value="https://claudialsart.com/thank-you.html">
-
         <button type="submit">Send</button>
       </form>
     </div>
@@ -55,11 +50,9 @@
     function openModal() {
       document.getElementById('contactModal').style.display = 'flex';
     }
-
     function closeModal() {
       document.getElementById('contactModal').style.display = 'none';
     }
-
     window.onclick = function(event) {
       const modal = document.getElementById('contactModal');
       if (event.target == modal) {
