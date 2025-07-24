@@ -1,131 +1,110 @@
-* {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
   height: 100%;
-  width: 100%;
-  font-family: 'Georgia', serif;
-  color: #ffffff;
-  background: url('https://claudialsart.github.io/hero-moon.jpg') no-repeat center center fixed;
-  background-size: cover;
   overflow: hidden;
+  font-family: 'Georgia', serif;
+  color: white;
 }
 
-.overlay {
-  height: 100%;
-  width: 100%;
+.hero {
+  background: url('hero-moon.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 3vh 5vw;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.5em;
+header {
   margin-top: 2vh;
 }
 
-.subtitle {
-  font-size: 1.2em;
-  margin-bottom: 2vh;
-  font-style: italic;
+h1 {
+  font-size: 4.2vw;
+  margin: 0;
+  letter-spacing: 1px;
 }
 
-.vertical-nav {
-  display: flex;
-  flex-direction: row;
-  gap: 1.2em;
-  font-size: 1em;
+.subtitle {
+  font-size: 2.5vw;
   margin: 1vh 0;
+}
+
+nav {
+  display: flex;
   flex-wrap: wrap;
+  gap: 1vw;
   justify-content: center;
+  margin-top: 1.5vh;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8vw;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ccc;
 }
 
 .buttons {
   display: flex;
-  flex-direction: row;
-  gap: 1.5em;
-  margin: 2vh 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.button {
-  padding: 0.7em 1.5em;
-  border: 1px solid #ffffff;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 1em;
-  transition: background 0.3s, color 0.3s;
-}
-
-.button:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.direct-email {
-  font-size: 0.95em;
-  margin-bottom: 2vh;
-}
-
-.direct-email a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-/* Contact Modal (unchanged) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.5vh;
   align-items: center;
 }
 
-.modal-content {
-  background-color: #000000;
-  padding: 2em;
-  border-radius: 5px;
-  width: 90%;
-  max-width: 500px;
+.btn {
+  border: 1px solid white;
+  padding: 1vh 4vw;
+  text-decoration: none;
+  color: white;
+  font-size: 2.5vw;
+  transition: background 0.3s;
+  min-width: 40vw;
+  text-align: center;
 }
 
-.modal-content h2 {
-  margin-bottom: 1em;
+.btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  margin-bottom: 1em;
-  padding: 0.8em;
-  border: none;
-  border-radius: 4px;
+footer {
+  margin-bottom: 2vh;
+  font-size: 2vw;
 }
 
-.modal-content button {
-  background-color: #ffffff;
-  color: #000000;
-  padding: 0.8em 1.5em;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+footer a {
+  color: white;
+  text-decoration: underline;
 }
 
-.close-button {
-  color: #ffffff;
-  float: right;
-  font-size: 1.5em;
-  cursor: pointer;
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5vw;
+  }
+
+  .subtitle {
+    font-size: 1.4vw;
+  }
+
+  nav a {
+    font-size: 1.2vw;
+  }
+
+  .btn {
+    font-size: 1.5vw;
+  }
+
+  footer {
+    font-size: 1vw;
+  }
 }
