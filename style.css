@@ -26,20 +26,20 @@ header {
 }
 
 h1 {
-  font-size: 4.2vw;
+  font-size: 5.5vw;
   margin: 0;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-size: 2.5vw;
+  font-size: 3vw;
   margin: 1vh 0;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1vw;
+  gap: 1.2vw;
   justify-content: center;
   margin-top: 1.5vh;
 }
@@ -47,7 +47,7 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 1.8vw;
+  font-size: 2.2vw;
   transition: color 0.3s;
 }
 
@@ -57,19 +57,20 @@ nav a:hover {
 
 .buttons {
   display: flex;
-  flex-direction: column;
-  gap: 1.5vh;
-  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  margin-bottom: 3vh;
+  flex-wrap: wrap;
 }
 
 .btn {
   border: 1px solid white;
-  padding: 1vh 4vw;
+  padding: 1.2vh 2.5vw;
   text-decoration: none;
   color: white;
   font-size: 2.5vw;
   transition: background 0.3s;
-  min-width: 40vw;
+  min-width: 15vw;
   text-align: center;
 }
 
@@ -78,8 +79,8 @@ nav a:hover {
 }
 
 footer {
-  margin-bottom: 2vh;
   font-size: 2vw;
+  margin-bottom: 1.5vh;
 }
 
 footer a {
@@ -87,24 +88,31 @@ footer a {
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   h1 {
-    font-size: 2.5vw;
+    font-size: 7vw;
   }
 
   .subtitle {
-    font-size: 1.4vw;
+    font-size: 4vw;
   }
 
   nav a {
-    font-size: 1.2vw;
+    font-size: 4vw;
   }
 
   .btn {
-    font-size: 1.5vw;
+    font-size: 4.5vw;
+    padding: 1.5vh 4vw;
+    min-width: auto;
   }
 
   footer {
-    font-size: 1vw;
+    font-size: 3.8vw;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 2vh;
   }
 }
