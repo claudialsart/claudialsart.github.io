@@ -208,3 +208,28 @@ nav a:hover {
     font-size: 1em;
   }
 }
+#what-i-paint {
+  background: url('what-i-paint.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#what-i-paint .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+}
+
+.my-journey-background {
+  background: url('my-journey.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+
+.my-journey-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+}
