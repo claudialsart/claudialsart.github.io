@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claudia LS Art</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="hero">
-    <header>
-      <h1>CLAUDIA LS ART</h1>
-      <p class="subtitle">Emotive realism meets abstract space</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#prints">Prints</a>
-        <a href="#commissions">Commissions</a>
-        <a href="#sold">Sold</a>
-        <a href="#contact">Contact Me</a>
-      </nav>
-    </header>
-
-    <div class="buttons">
-      <a href="#space-art" class="btn">Space Art</a>
-      <a href="#abstract-realism" class="btn">Abstract Realism</a>
-      <a href="#painting-studies" class="btn">Painting Studies</a>
-    </div>
-
-    <footer>
-      <p>Or reach me directly at <a href="mailto:info@claudialsart.com">info@claudialsart.com</a></p>
-    </footer>
+  <div class="overlay">
+    <h1>CLAUDIA LS ART</h1>
+    <p class="subtitle">Emotive realism meets abstract space</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#prints">Prints</a>
+      <a href="#commissions">Commissions</a>
+      <a href="#sold">Sold</a>
+      <a href="#" id="open-form">Contact Me</a>
+    </nav>
   </div>
+
+  <div class="buttons">
+    <a href="#space" class="button">Space Art</a>
+    <a href="#abstract" class="button">Abstract Realism</a>
+    <a href="#studies" class="button">Painting Studies</a>
+  </div>
+
+  <!-- Email contact at bottom -->
+  <p class="direct-email">Or reach me directly at <a href="mailto:info@claudialsart.com"><strong>info@claudialsart.com</strong></a></p>
+
+  <!-- Contact Form Modal -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-form">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mldleggd" method="POST">
+        <input type="hidden" name="_redirect" value="https://claudialsart.com/thank-you.html" />
+
+        <label>Your Name:</label>
+        <input type="text" name="name" required />
+
+        <label>Your Email:</label>
+        <input type="email" name="email" required />
+
+        <label>Your Message:</label>
+        <textarea name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("open-form");
+    const closeBtn = document.getElementById("close-form");
+    const modal = document.getElementById("contact-modal");
+
+    openBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
