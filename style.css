@@ -1,118 +1,210 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Georgia', serif;
-  color: white;
+@font-face {
+  font-family: 'Cormorant';
+  src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
 }
 
-.hero {
-  background: url('hero-moon.jpg') no-repeat center center;
+@font-face {
+  font-family: 'Cormorant-Bold';
+  src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cormorant', serif;
+  background-image: url("hero-moon-long.jpg");
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100svh;
+  color: #f5f0e6;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 2vh 2vw;
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-header {
+.overlay {
+  text-align: center;
   margin-top: 2vh;
+  padding: 2vh;
 }
 
 h1 {
-  font-size: 5.5vw;
-  margin: 0;
-  letter-spacing: 1px;
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 3em;
+  margin-bottom: 0.2em;
 }
 
 .subtitle {
-  font-size: 3vw;
-  margin: 1vh 0;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: #e6e1d6;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2vw;
   justify-content: center;
-  margin-top: 1.5vh;
+  gap: 1.2em;
+  font-size: 1em;
+  margin-top: 1em;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
-  font-size: 2.2vw;
-  transition: color 0.3s;
+  color: #f5f0e6;
+  transition: opacity 0.3s ease;
 }
 
 nav a:hover {
-  color: #ccc;
+  opacity: 0.7;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 2vw;
-  margin-bottom: 3vh;
+  gap: 2em;
+  padding: 2em 1em;
   flex-wrap: wrap;
+  margin-top: auto;
+  margin-bottom: 2vh;
 }
 
-.btn {
-  border: 1px solid white;
-  padding: 1.2vh 2.5vw;
+.button {
+  font-family: 'Cormorant', serif;
+  font-size: 1.2em;
+  padding: 0.8em 1.5em;
+  border: 1px solid #f5f0e6;
+  color: #f5f0e6;
+  background: transparent;
   text-decoration: none;
-  color: white;
-  font-size: 2.5vw;
-  transition: background 0.3s;
-  min-width: 15vw;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: rgba(245, 240, 230, 0.15);
+  color: #ffffff;
+}
+
+/* Contact email */
+.direct-email {
+  margin-top: 2em;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #f5f0e6;
   text-align: center;
 }
 
-.btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-footer {
-  font-size: 2vw;
-  margin-bottom: 1.5vh;
-}
-
-footer a {
-  color: white;
+.direct-email a {
+  color: #f5f0e6;
   text-decoration: underline;
 }
 
+.direct-email a:hover {
+  opacity: 0.7;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: rgba(15, 15, 15, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Cormorant', serif;
+  font-size: 1em;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  border: 1px solid #f5f0e6;
+  background: transparent;
+  color: #f5f0e6;
+  cursor: pointer;
+  font-family: 'Cormorant-Bold', serif;
+  font-size: 1em;
+}
+
+.modal-content button:hover {
+  background-color: rgba(245, 240, 230, 0.2);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+
   h1 {
-    font-size: 7vw;
+    font-size: 2.2em;
   }
 
   .subtitle {
-    font-size: 4vw;
+    font-size: 1em;
+    padding: 0 1em;
   }
 
-  nav a {
-    font-size: 4vw;
+  .modal-content {
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
-  .btn {
-    font-size: 4.5vw;
-    padding: 1.5vh 4vw;
-    min-width: auto;
+  .modal-content input,
+  .modal-content textarea {
+    font-size: 1em;
   }
 
-  footer {
-    font-size: 3.8vw;
+  .modal-content h2 {
+    font-size: 1.5em;
   }
 
-  .buttons {
-    flex-direction: column;
-    gap: 2vh;
+  .modal-content button {
+    font-size: 1em;
   }
 }
