@@ -30,34 +30,37 @@
   <p class="direct-email">Or reach me directly at <a href="mailto:info@claudialsart.com"><strong>info@claudialsart.com</strong></a></p>
 
   <!-- Contact Form Modal -->
-<div id="contact-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-button" id="close-form">&times;</span>
-    <h2>Contact Me</h2>
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-form">&times;</span>
+      <h2>Contact Me</h2>
 
-    <form id="contact-form" action="https://formspree.io/f/mldljgqw" method="POST">
-      <label>Your Name:</label>
-      <input type="text" name="name" required />
+      <form id="contact-form" action="https://formspree.io/f/mldljgqw" method="POST">
+        <label>Your Name:</label>
+        <input type="text" name="name" required />
 
-      <label>Your Email:</label>
-      <input type="email" name="email" required />
+        <label>Your Email:</label>
+        <input type="email" name="email" required />
 
-      <label>Your Message:</label>
-      <textarea name="message" required></textarea>
+        <label>Your Message:</label>
+        <textarea name="message" required></textarea>
 
-      <button type="submit">Send</button>
+        <button type="submit">Send</button>
 
-      <p id="form-status" style="margin-top: 1em; color: lightgreen; display: none;">
-        Thank you! Your message has been sent.
-      </p>
-    </form>
+        <p id="form-status" style="margin-top: 1em; color: lightgreen; display: none;">
+          Thank you! Your message has been sent.
+        </p>
+      </form>
+    </div>
   </div>
-</div>
 
+  <!-- Modal + Form Script -->
   <script>
     const openBtn = document.getElementById("open-form");
     const closeBtn = document.getElementById("close-form");
     const modal = document.getElementById("contact-modal");
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
 
     openBtn.addEventListener("click", function (e) {
       e.preventDefault();
@@ -73,62 +76,35 @@
         modal.style.display = "none";
       }
     });
-  </script>
-  
-  <script>
-  // Modal open/close behavior
-  const openBtn = document.querySelector('[onclick="openModal()"]');
-  const closeBtn = document.getElementById('close-form');
-  const modal = document.getElementById('contact-modal');
 
-  function openModal() {
-    modal.style.display = 'flex';
-  }
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = form.getAttribute("action");
 
-  function closeModal() {
-    modal.style.display = 'none';
-  }
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" }
+        });
 
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = 'none';
-    }
-  }
-
-  // Form handling
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const action = form.getAttribute('action');
-
-    try {
-      const response = await fetch(action, {
-        method: 'POST',
-        body: data,
-        headers: {
-          'Accept': 'application/json'
+        if (response.ok) {
+          form.reset();
+          status.textContent = "Thank you! Your message has been sent.";
+          status.style.color = "lightgreen";
+          status.style.display = "block";
+        } else {
+          status.textContent = "Oops! Something went wrong.";
+          status.style.color = "tomato";
+          status.style.display = "block";
         }
-      });
-
-      if (response.ok) {
-        form.reset();
-        status.style.display = 'block';
-        status.style.color = 'lightgreen';
-        status.textContent = 'Thank you! Your message has been sent.';
-      } else {
-        status.textContent = 'Oops! Something went wrong.';
-        status.style.color = 'tomato';
-        status.style.display = 'block';
+      } catch (error) {
+        status.textContent = "Network error. Please try again.";
+        status.style.color = "tomato";
+        status.style.display = "block";
       }
-    } catch (error) {
-      status.textContent = 'Network error. Please try again.';
-      status.style.color = 'tomato';
-      status.style.display = 'block';
-    }
-  });
-</script>
+    });
+  </script>
 </body>
 </html>
