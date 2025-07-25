@@ -219,6 +219,7 @@ nav a:hover {
 #what-i-paint .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
+  border-radius: 20px;
 }
 
 .my-journey-background {
@@ -232,6 +233,8 @@ nav a:hover {
 .my-journey-box {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
+  border-radius: 20px;
+}
 }
 .where-i-am {
   position: relative;
