@@ -233,3 +233,20 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
 }
+.where-i-am {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5em 2em;
+  color: white;
+  text-align: center;
+}
+
+.where-i-am-box {
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark box */
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
