@@ -272,3 +272,11 @@ textarea{min-height:140px;resize:vertical}
   .grid{grid-template-columns:repeat(6,1fr)}
   .card{grid-column:span 6}
 }
+/* MOBILE HERO TITLE ADJUSTMENT — keeps one line */
+@media (max-width: 768px) {
+  .index-page .hero h1 {
+    font-size: clamp(22px, 7vw, 38px);
+    letter-spacing: 0.055em;
+    line-height: 1.05;
+  }
+}
