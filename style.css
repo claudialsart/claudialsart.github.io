@@ -81,9 +81,10 @@ img{max-width:100%;display:block}
 
 /* ===========================================================
    HOMEPAGE HERO – FINAL CORRECT VERSION (DO NOT CHANGE)
-   =========================================================== */.index-page .hero h1 {
-  font-family: 'EB Garamond', serif !important;
-  font-weight: 700;
+   =========================================================== */
+.index-page .hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: clamp(32px, 6vw, 64px);
