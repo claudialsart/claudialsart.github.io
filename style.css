@@ -86,9 +86,9 @@ img{max-width:100%;display:block}
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: clamp(28px, 4.7vw, 50px);
-  line-height: 1.02;
+  letter-spacing: 0.04em;
+  font-size: clamp(26px, 4.8vw, 54px);   /* smaller */
+  line-height: 1.07;                    /* tighter */
   margin-bottom: 12px;
 }
 
