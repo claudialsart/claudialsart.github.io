@@ -87,9 +87,9 @@ img{max-width:100%;display:block}
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-size: clamp(32px, 6vw, 64px);
-  line-height: 1.08;
-  margin-bottom: 14px;
+  font-size: clamp(28px, 4.7vw, 50px);
+  line-height: 1.02;
+  margin-bottom: 12px;
 }
 
 .hero p{
