@@ -255,7 +255,14 @@ background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.40));
 .style-panel p{
   max-width:800px; color:var(--muted); margin:0;
 }
+/* Left label text colour (category title + description) */
+.style-panel__inner > div:first-child h2{
+  color: rgba(245,245,240,0.9);
+}
 
+.style-panel__inner > div:first-child p{
+  color: rgba(245,245,240,0.7);
+}
 /* PORTFOLIO PAGE TYPOGRAPHY */
 .portfolio-page h1,
 .portfolio-page h2,
