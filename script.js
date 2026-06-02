@@ -44,3 +44,53 @@ document.querySelectorAll('.menu a').forEach(a=>{
     }, 4000); // change every 4s
   });
 })();
+
+// Portfolio artwork modal
+(function(){
+  const modal = document.getElementById('artworkModal');
+  if(!modal) return;
+
+  const modalImage = document.getElementById('modalArtworkImage');
+  const modalTitle = document.getElementById('modalArtworkTitle');
+  const modalDescription = document.getElementById('modalArtworkDescription');
+  const modalButton = document.getElementById('modalArtworkButton');
+  const closeButton = modal.querySelector('.artwork-modal__close');
+  const backdrop = modal.querySelector('.artwork-modal__backdrop');
+
+  document.querySelectorAll('.portfolio-page .card').forEach(card => {
+    card.addEventListener('click', () => {
+      const image = card.querySelector('img');
+      const title = card.querySelector('.title')?.textContent.trim() || '';
+      const price = card.querySelector('.price')?.textContent.trim() || '';
+      const isSold = price.toUpperCase() === 'SOLD';
+
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      modalTitle.textContent = title;
+
+      if(isSold){
+        modalDescription.textContent = '';
+        modalButton.style.display = 'none';
+      } else {
+        modalDescription.textContent = card.dataset.description || 'This artwork is available. Please enquire for more details.';
+        modalButton.style.display = 'inline-block';
+        modalButton.href = 'contact.html?artwork=' + encodeURIComponent(title);
+      }
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  closeButton.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeModal();
+  });
+})();
