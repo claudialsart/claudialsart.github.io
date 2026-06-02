@@ -78,7 +78,7 @@ document.querySelectorAll('.menu a').forEach(a=>{
       }
 
       modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'hidden';
     });
   });
 
