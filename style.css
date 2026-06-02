@@ -325,4 +325,99 @@ textarea{min-height:140px;resize:vertical}
   height:auto;
   aspect-ratio:auto;
   object-fit:contain;
+  
+  .portfolio-page .card{
+  cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.portfolio-page .card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.10);
+}
+
+.portfolio-page .card img{
+  transition:transform .35s ease;
+}
+
+.portfolio-page .card:hover img{
+  transform:scale(1.025);
+}
+
+.artwork-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:3000;
+}
+
+.artwork-modal.open{
+  display:block;
+}
+
+.artwork-modal__backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.78);
+}
+
+.artwork-modal__content{
+  position:relative;
+  z-index:1;
+  width:min(1100px,92%);
+  max-height:88vh;
+  margin:6vh auto;
+  background:#f8f7f4;
+  display:grid;
+  grid-template-columns:1.5fr .9fr;
+  gap:28px;
+  padding:24px;
+  border-radius:10px;
+  overflow:auto;
+}
+
+.artwork-modal__image-wrap img{
+  width:100%;
+  max-height:78vh;
+  object-fit:contain;
+}
+
+.artwork-modal__text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.artwork-modal__text h2{
+  font-family:'Playfair Display', serif;
+  margin:0 0 16px;
+}
+
+.artwork-modal__text p{
+  color:var(--muted);
+  margin:0 0 24px;
+}
+
+.artwork-modal__close{
+  position:absolute;
+  top:12px;
+  right:16px;
+  border:0;
+  background:none;
+  font-size:34px;
+  cursor:pointer;
+  color:var(--text);
+}
+
+@media (max-width:700px){
+  .artwork-modal__content{
+    grid-template-columns:1fr;
+    margin:4vh auto;
+    max-height:92vh;
+  }
+
+  .artwork-modal__text{
+    justify-content:flex-start;
+  }
+}
 }
