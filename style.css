@@ -325,6 +325,7 @@ textarea{min-height:140px;resize:vertical}
   height:auto;
   aspect-ratio:auto;
   object-fit:contain;
+}
   
   .portfolio-page .card{
   cursor:pointer;
@@ -419,5 +420,4 @@ textarea{min-height:140px;resize:vertical}
   .artwork-modal__text{
     justify-content:flex-start;
   }
-}
 }
