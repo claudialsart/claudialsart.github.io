@@ -54,6 +54,7 @@ document.querySelectorAll('.menu a').forEach(a=>{
   const modalTitle = document.getElementById('modalArtworkTitle');
   const modalDescription = document.getElementById('modalArtworkDescription');
   const modalButton = document.getElementById('modalArtworkButton');
+  const modalSold = document.getElementById('modalArtworkSold');
   const closeButton = modal.querySelector('.artwork-modal__close');
   const backdrop = modal.querySelector('.artwork-modal__backdrop');
 
@@ -73,8 +74,10 @@ document.querySelectorAll('.menu a').forEach(a=>{
 
 if(isSold){
     modalButton.style.display = 'none';
+    modalSold.style.display = 'inline-block';
 } else {
     modalButton.style.display = 'inline-block';
+    modalSold.style.display = 'none';
     modalButton.href =
       'contact.html?artwork=' + encodeURIComponent(title);
 }
