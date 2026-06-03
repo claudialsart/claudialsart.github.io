@@ -68,15 +68,16 @@ document.querySelectorAll('.menu a').forEach(a=>{
       modalImage.alt = image.alt;
       modalTitle.textContent = title;
 
-      if(isSold){
-        modalDescription.textContent = '';
-        modalButton.style.display = 'none';
-      } else {
-        modalDescription.textContent = card.dataset.description || 'This artwork is available. Please enquire for more details.';
-        modalButton.style.display = 'inline-block';
-        modalButton.href = 'contact.html?artwork=' + encodeURIComponent(title);
-      }
+     modalDescription.textContent =
+  card.dataset.description || '';
 
+if(isSold){
+    modalButton.style.display = 'none';
+} else {
+    modalButton.style.display = 'inline-block';
+    modalButton.href =
+      'contact.html?artwork=' + encodeURIComponent(title);
+}
       modal.classList.add('open');
       // document.body.style.overflow = 'hidden';
     });
