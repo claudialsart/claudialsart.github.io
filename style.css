@@ -426,11 +426,13 @@ textarea{min-height:140px;resize:vertical}
   margin-top:10px;
   margin-bottom:20px;
   padding:8px 14px;
-  border:1px solid var(--border);
   border-radius:6px;
   font-family:'Montserrat', sans-serif;
   font-size:14px;
   letter-spacing:.08em;
   width:fit-content;
-  background:#f2f2f2;
+
+  background:#7a1f1f;
+  color:#ffffff;
+  border:none;
 }
