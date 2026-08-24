@@ -78,9 +78,23 @@ if(isSold){
 } else {
     modalButton.style.display = 'inline-block';
     modalSold.style.display = 'none';
-    modalButton.href =
-      'contact.html?artwork=' + encodeURIComponent(title);
-}
+
+    const purchaseUrl = card.dataset.purchaseUrl;
+
+    if (purchaseUrl) {
+      modalButton.href = purchaseUrl;
+      modalButton.textContent = 'Purchase on Saatchi Art';
+      modalButton.target = '_blank';
+      modalButton.rel = 'noopener noreferrer';
+    } else {
+      modalButton.href =
+        'contact.html?artwork=' + encodeURIComponent(title);
+      modalButton.textContent = 'Enquire About This Artwork';
+      modalButton.removeAttribute('target');
+      modalButton.removeAttribute('rel');
+    }
+    }
+
       modal.classList.add('open');
       // document.body.style.overflow = 'hidden';
     });
