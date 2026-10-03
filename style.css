@@ -458,7 +458,7 @@ textarea{min-height:140px;resize:vertical}
   .about-hero img {
     object-position: center;
   }
-}
+  
 .sale-button {
   display: inline-block;
   margin: 14px 0 8px;
@@ -477,5 +477,6 @@ textarea{min-height:140px;resize:vertical}
 .sale-button:hover {
   background: #e0ca8d;
   transform: translateY(-1px);
+}
 }
 
