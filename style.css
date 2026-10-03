@@ -459,4 +459,23 @@ textarea{min-height:140px;resize:vertical}
     object-position: center;
   }
 }
+.sale-button {
+  display: inline-block;
+  margin: 14px 0 8px;
+  padding: 12px 28px;
+  background: #d2b875;
+  color: #111 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: 0.2s ease;
+}
+
+.sale-button:hover {
+  background: #e0ca8d;
+  transform: translateY(-1px);
+}
 
