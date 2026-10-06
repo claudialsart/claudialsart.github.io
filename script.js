@@ -82,6 +82,12 @@ if(isSold){
     modalSold.style.display = 'none';
 
     const purchaseUrl = card.dataset.purchaseUrl;
+    // Show international shipping contact only for Ko-fi artworks
+if (purchaseUrl && purchaseUrl.includes('ko-fi.com')) {
+  internationalPurchase.style.display = 'block';
+} else {
+  internationalPurchase.style.display = 'none';
+}
 // International purchase by email
 if (internationalEmail) {
   const subject = 'International purchase enquiry - ' + title;
