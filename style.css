@@ -507,6 +507,33 @@ textarea{min-height:140px;resize:vertical}
   letter-spacing:.06em;
   color:#7a1f1f;
 }
+/* INTERNATIONAL SHIPPING CONTACT */
+.international-purchase{
+  margin-top:14px;
+  font-family:'Lora', serif;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.international-purchase span{
+  display:block;
+}
+
+.international-purchase a{
+  display:inline-block;
+  margin-top:2px;
+  font-family:'Montserrat', sans-serif;
+  font-size:12px;
+  font-weight:600;
+  color:var(--text);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.international-purchase a:hover{
+  color:var(--accent);
+}
 
 
 
