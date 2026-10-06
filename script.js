@@ -82,11 +82,19 @@ if(isSold){
     const purchaseUrl = card.dataset.purchaseUrl;
 
     if (purchaseUrl) {
-      modalButton.href = purchaseUrl;
-      modalButton.textContent = 'Purchase on Saatchi Art';
-      modalButton.target = '_blank';
-      modalButton.rel = 'noopener noreferrer';
-    } else {
+  modalButton.href = purchaseUrl;
+
+  if (purchaseUrl.includes('ko-fi.com')) {
+    modalButton.textContent = 'Buy This Painting';
+  } else if (purchaseUrl.includes('saatchiart.com')) {
+    modalButton.textContent = 'Purchase on Saatchi Art';
+  } else {
+    modalButton.textContent = 'Buy This Painting';
+  }
+
+  modalButton.target = '_blank';
+  modalButton.rel = 'noopener noreferrer';
+} else {
       modalButton.href =
         'contact.html?artwork=' + encodeURIComponent(title);
       modalButton.textContent = 'Enquire About This Artwork';
