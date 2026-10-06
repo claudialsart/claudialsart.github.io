@@ -55,6 +55,8 @@ document.querySelectorAll('.menu a').forEach(a=>{
   const modalDescription = document.getElementById('modalArtworkDescription');
   const modalButton = document.getElementById('modalArtworkButton');
   const modalSold = document.getElementById('modalArtworkSold');
+  const internationalPurchase = document.getElementById('internationalPurchase');
+const internationalEmail = document.getElementById('internationalEmail');
   const closeButton = modal.querySelector('.artwork-modal__close');
   const backdrop = modal.querySelector('.artwork-modal__backdrop');
 
@@ -80,7 +82,14 @@ if(isSold){
     modalSold.style.display = 'none';
 
     const purchaseUrl = card.dataset.purchaseUrl;
+// International purchase by email
+if (internationalEmail) {
+  const subject = 'International purchase enquiry - ' + title;
 
+  internationalEmail.href =
+    'mailto:Claudia.LS.fineart@gmail.com?subject=' +
+    encodeURIComponent(subject);
+}
     if (purchaseUrl) {
   modalButton.href = purchaseUrl;
 
