@@ -511,7 +511,7 @@ textarea{min-height:140px;resize:vertical}
 .international-purchase{
   margin-top:14px;
   font-family:'Lora', serif;
-  font-size:13px;
+  font-size:15px;
   color:var(--muted);
   line-height:1.5;
 }
@@ -524,7 +524,7 @@ textarea{min-height:140px;resize:vertical}
   display:inline-block;
   margin-top:2px;
   font-family:'Montserrat', sans-serif;
-  font-size:12px;
+  font-size:14px;
   font-weight:600;
   color:var(--text);
   text-decoration:underline;
